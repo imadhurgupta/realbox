@@ -4,17 +4,72 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Realbox | Coming Soon</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Outfit:wght@700&display=swap" rel="stylesheet">
+    <meta name="description" content="Realbox is coming soon. The future of tech is almost here.">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;700;900&family=Inter:wght@300;400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="glow glow-1"></div>
-    <div class="glow glow-2"></div>
-    
-    <div class="container">
-        <h1 class="logo">Real<span>box</span></h1>
-        <h2 class="coming-soon">Coming Soon....</h2>
-        <p>We are building the future of tech. Stay tuned.</p>
-    </div>
+
+    <!-- Animated futuristic canvas background -->
+    <canvas id="bgCanvas"></canvas>
+
+    <!-- Scanline overlay -->
+    <div class="scanlines"></div>
+
+    <!-- Main content -->
+    <main class="main">
+        <div class="card">
+            <div class="logo-wrapper">
+                <div class="logo-icon">
+                    <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect x="4" y="4" width="14" height="14" rx="3" stroke="url(#g1)" stroke-width="2"/>
+                        <rect x="22" y="4" width="14" height="14" rx="3" stroke="url(#g1)" stroke-width="2"/>
+                        <rect x="4" y="22" width="14" height="14" rx="3" stroke="url(#g1)" stroke-width="2"/>
+                        <rect x="22" y="22" width="14" height="14" rx="3" fill="url(#g1)" opacity="0.4"/>
+                        <defs>
+                            <linearGradient id="g1" x1="0" y1="0" x2="40" y2="40" gradientUnits="userSpaceOnUse">
+                                <stop stop-color="#00f0ff"/>
+                                <stop offset="1" stop-color="#bf00ff"/>
+                            </linearGradient>
+                        </defs>
+                    </svg>
+                </div>
+                <span class="logo-text">Real<span class="accent">box</span></span>
+            </div>
+
+            <div class="badge">INITIALIZING</div>
+
+            <h1 class="title">Coming <span class="gradient-text">Soon</span></h1>
+            <p class="subtitle">We are engineering the future.<br>Something extraordinary is on its way.</p>
+
+            <div class="divider">
+                <span></span><span class="divider-dot"></span><span></span>
+            </div>
+
+            <form class="notify-form" id="notifyForm">
+                <input
+                    type="email"
+                    id="emailInput"
+                    class="email-input"
+                    placeholder="Enter your email to get notified"
+                    required
+                    autocomplete="email"
+                />
+                <button type="submit" class="notify-btn">Notify Me</button>
+            </form>
+
+            <div class="success-msg" id="successMsg">
+                <span class="check">✓</span> You're on the list! We'll notify you at launch.
+            </div>
+
+            <div class="tech-tags">
+                <span class="tag">AI-Powered</span>
+                <span class="tag">Cloud Native</span>
+                <span class="tag">Zero Latency</span>
+            </div>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
 </body>
 </html>
