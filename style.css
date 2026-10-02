@@ -1,5 +1,7 @@
 /* ============ RESET & ROOT ============ */
-*, *::before, *::after {
+*,
+*::before,
+*::after {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -18,7 +20,9 @@
     --font-body: 'Inter', sans-serif;
 }
 
-html { scroll-behavior: smooth; }
+html {
+    scroll-behavior: smooth;
+}
 
 body {
     font-family: var(--font-body);
@@ -35,8 +39,10 @@ body {
 /* ============ CANVAS BACKGROUND ============ */
 #bgCanvas {
     position: fixed;
-    top: 0; left: 0;
-    width: 100%; height: 100%;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
     z-index: 0;
 }
 
@@ -45,13 +51,11 @@ body {
     position: fixed;
     inset: 0;
     z-index: 1;
-    background: repeating-linear-gradient(
-        0deg,
-        transparent,
-        transparent 2px,
-        rgba(0, 0, 0, 0.03) 2px,
-        rgba(0, 0, 0, 0.03) 4px
-    );
+    background: repeating-linear-gradient(0deg,
+            transparent,
+            transparent 2px,
+            rgba(0, 0, 0, 0.03) 2px,
+            rgba(0, 0, 0, 0.03) 4px);
     pointer-events: none;
 }
 
@@ -79,9 +83,9 @@ body {
     width: 100%;
     text-align: center;
     box-shadow:
-        0 0 0 1px rgba(0,240,255,0.05),
+        0 0 0 1px rgba(0, 240, 255, 0.05),
         0 25px 60px rgba(0, 0, 0, 0.6),
-        inset 0 1px 0 rgba(255,255,255,0.06);
+        inset 0 1px 0 rgba(255, 255, 255, 0.06);
     animation: fadeInUp 1s ease forwards;
     position: relative;
     overflow: hidden;
@@ -91,7 +95,9 @@ body {
 .card::before {
     content: '';
     position: absolute;
-    top: 0; left: 10%; right: 10%;
+    top: 0;
+    left: 10%;
+    right: 10%;
     height: 1px;
     background: linear-gradient(90deg, transparent, var(--primary), var(--secondary), transparent);
     opacity: 0.8;
@@ -106,7 +112,7 @@ body {
 }
 
 .logo-img {
-    height: 140px;
+    height: 360px;
     width: auto;
     object-fit: contain;
     filter: drop-shadow(0 0 14px rgba(0, 240, 255, 0.45)) drop-shadow(0 0 4px rgba(191, 0, 255, 0.3));
@@ -114,8 +120,15 @@ body {
 }
 
 @keyframes logoFloat {
-    0%, 100% { transform: translateY(0px); }
-    50%       { transform: translateY(-5px); }
+
+    0%,
+    100% {
+        transform: translateY(0px);
+    }
+
+    50% {
+        transform: translateY(-5px);
+    }
 }
 
 /* ============ BADGE ============ */
@@ -137,7 +150,8 @@ body {
 .badge::before {
     content: '';
     display: inline-block;
-    width: 6px; height: 6px;
+    width: 6px;
+    height: 6px;
     border-radius: 50%;
     background: var(--primary);
     box-shadow: 0 0 6px var(--primary);
@@ -145,13 +159,29 @@ body {
 }
 
 @keyframes pulse-dot {
-    0%, 100% { opacity: 1; transform: scale(1); }
-    50% { opacity: 0.4; transform: scale(0.7); }
+
+    0%,
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+
+    50% {
+        opacity: 0.4;
+        transform: scale(0.7);
+    }
 }
 
 @keyframes blink {
-    0%, 100% { border-color: rgba(0, 240, 255, 0.3); }
-    50% { border-color: rgba(0, 240, 255, 0.7); }
+
+    0%,
+    100% {
+        border-color: rgba(0, 240, 255, 0.3);
+    }
+
+    50% {
+        border-color: rgba(0, 240, 255, 0.7);
+    }
 }
 
 /* ============ TITLE ============ */
@@ -219,7 +249,7 @@ body {
 .email-input {
     flex: 1;
     padding: 0.85rem 1.25rem;
-    background: rgba(0,0,0,0.35);
+    background: rgba(0, 0, 0, 0.35);
     border: 1px solid var(--glass-border);
     border-radius: 12px;
     color: var(--text);
@@ -229,7 +259,9 @@ body {
     transition: border-color 0.3s, box-shadow 0.3s;
 }
 
-.email-input::placeholder { color: var(--text-muted); }
+.email-input::placeholder {
+    color: var(--text-muted);
+}
 
 .email-input:focus {
     border-color: var(--primary);
@@ -257,7 +289,9 @@ body {
     filter: brightness(1.1);
 }
 
-.notify-btn:active { transform: translateY(0); }
+.notify-btn:active {
+    transform: translateY(0);
+}
 
 /* ============ SUCCESS MESSAGE ============ */
 .success-msg {
@@ -276,7 +310,9 @@ body {
     animation: fadeInUp 0.4s ease;
 }
 
-.success-msg.show { display: flex; }
+.success-msg.show {
+    display: flex;
+}
 
 .check {
     font-size: 1.1rem;
@@ -297,11 +333,11 @@ body {
     font-weight: 600;
     letter-spacing: 1px;
     color: var(--text-muted);
-    border: 1px solid rgba(255,255,255,0.07);
+    border: 1px solid rgba(255, 255, 255, 0.07);
     border-radius: 100px;
     padding: 0.3rem 0.85rem;
     text-transform: uppercase;
-    background: rgba(255,255,255,0.02);
+    background: rgba(255, 255, 255, 0.02);
     transition: color 0.3s, border-color 0.3s;
 }
 
@@ -312,8 +348,15 @@ body {
 
 /* ============ ANIMATIONS ============ */
 @keyframes fadeInUp {
-    from { opacity: 0; transform: translateY(30px); }
-    to   { opacity: 1; transform: translateY(0); }
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 /* ============ RESPONSIVE ============ */
@@ -332,11 +375,22 @@ body {
 }
 
 @media (max-width: 380px) {
-    .card { padding: 2rem 1.25rem; }
-    .logo-img { height: 100px; }
+    .card {
+        padding: 2rem 1.25rem;
+    }
+
+    .logo-img {
+        height: 200px;
+    }
 }
 
 @media (max-height: 600px) {
-    .main { align-items: flex-start; padding-top: 1.5rem; }
-    body { overflow-y: auto; }
+    .main {
+        align-items: flex-start;
+        padding-top: 1.5rem;
+    }
+
+    body {
+        overflow-y: auto;
+    }
 }
