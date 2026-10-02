@@ -112,7 +112,7 @@ body {
 }
 
 .logo-img {
-    height: 360px;
+    height: 240px;
     width: auto;
     object-fit: contain;
     filter: drop-shadow(0 0 14px rgba(0, 240, 255, 0.45)) drop-shadow(0 0 4px rgba(191, 0, 255, 0.3));
