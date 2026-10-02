@@ -113,7 +113,7 @@ body {
 }
 
 .logo-img {
-    height: clamp(100px, 22vw, 200px);
+    height: clamp(140px, 28vw, 280px);
     max-width: 80%;
     width: auto;
     object-fit: contain;
@@ -382,7 +382,7 @@ body {
     }
 
     .logo-img {
-        height: clamp(80px, 28vw, 110px);
+        height: clamp(110px, 28vw, 140px);
     }
 }
 
@@ -394,6 +394,6 @@ body {
     }
 
     .logo-img {
-        height: clamp(70px, 15vh, 120px);
+        height: clamp(100px, 18vh, 160px);
     }
 }
