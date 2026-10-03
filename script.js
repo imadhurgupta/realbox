@@ -119,8 +119,26 @@ render();
 const form = document.getElementById('notifyForm');
 const successMsg = document.getElementById('successMsg');
 
+const WAITLIST_KEY = 'rb_waitlist';
+
+function getWaitlist() {
+    try { return JSON.parse(localStorage.getItem(WAITLIST_KEY)) || []; } catch { return []; }
+}
+
 form.addEventListener('submit', (e) => {
     e.preventDefault();
+    const email = document.getElementById('emailInput').value.trim().toLowerCase();
+
+    // Save to localStorage for admin panel
+    if (email) {
+        const list = getWaitlist();
+        const alreadyExists = list.some(en => en.email === email);
+        if (!alreadyExists) {
+            list.push({ email, timestamp: Date.now() });
+            localStorage.setItem(WAITLIST_KEY, JSON.stringify(list));
+        }
+    }
+
     form.style.display = 'none';
     successMsg.classList.add('show');
 });
